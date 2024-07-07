@@ -14,5 +14,5 @@ uni_sim = cosine_similarity(uni_matrix)
 def recommend_articles(x):
     return ", ".join(data["Title"].loc[x.argsort()[-5:-1]])
 data["Recommended Articles"] = [recommend_articles(x) for x in uni_sim]
-print(data.head())
+data.head()
 print(data["Recommended Articles"][22])
